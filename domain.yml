@@ -2,18 +2,49 @@ intents:
 - greet
 - goodbye
 - thanks
-- deny
-- joke
+# - deny
+# - joke
+- pricing
 - name
+- car_model
+- year_model
+- user_dob
+- issue_date
+- expire_date
+# - model
+# - year
+- user_age
+# - issue_date
+- expire_date
 
 
 entities:
 - name
+- make
+- model
+# - year
+# - age
+# - date
 
 
 slots:
   name:
     type: text
+  make:
+    type: text
+  model:
+    type: text
+  model_year:
+    type: text
+  user_dob:
+    type: text
+  license_exp:
+    type: text
+  user_age:
+    type: text
+  time:
+    type: list
+  
 
 
 actions:
@@ -21,15 +52,48 @@ actions:
 - utter_thanks
 - utter_greet
 - utter_goodbye
+- utter_ask_car
+- utter_ask_dob
+- utter_ask_license_issue
+- utter_ask_license_expire
 - action_joke
+- action_get_model_year
+- action_ask_model_year
+- action_verify_dob
+- action_verify_expire_date
+- action_pricing
+
 
 
 templates:
   utter_name:
   - text: "Hey there! Tell me your name."
+  - text: "Hello! How could I address you?"
+  - text: "Hi! May I know who I am talking with?"
 
   utter_greet:
-  - text: "Nice to you meet you {name}. How can I help?"
+  - text: "Nice to you meet you. How can I help?"
+
+  utter_ask_car:
+  - text: "Could you specify your car model?"
+  - text: "May I know which model do you have?"
+  - text: "I would like to know which model you want to insure?"
+
+  utter_ask_model_year:
+  - text: "Could you specify year model (2017, 2016, etc ...)?"
+  - text: "May I know which year model do you have (2017, 2016, etc ...)?"
+
+  utter_ask_dob:
+  - text: "What is your date of birth?"
+  - text: "Could you tell me your birth date?"
+
+  utter_ask_license_issue:
+  - text: "What is issue date of your drive license ?"
+  - text: "When did you get your drive license?"
+
+  utter_ask_license_expire:
+  - text: "What is expire date of your drive license ?"
+  - text: "When will your drive license expire?"
 
   utter_goodbye:
   - text: "Talk to you later!"
