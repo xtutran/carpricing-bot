@@ -118,6 +118,66 @@
 - Expired
 - Expiration
 
+## intent:chitchat
+- can you share your boss with me?
+- i want to get to know your owner
+- i want to know the company which designed you
+- i want to know the company which generated you
+- i want to know the company which invented you
+- i want to know who invented you
+- May I ask who invented you?
+- please tell me the company who created you
+- please tell me who created you
+- tell me more about your creators
+- tell me more about your founders
+- Ahoy matey how are you?
+- are you alright
+- are you having a good day
+- Are you ok?
+- are you okay
+- Do you feel good?
+- how are things going
+- how are things with you?
+- How are things?
+- how are you
+- how are you doing
+- how are you doing this morning
+- how are you feeling
+- how are you today
+- How are you?
+- How is the weather today?
+- What's the weather like?
+- How is the weather?
+- What is the weather at your place?
+- Do you have good weather?
+- Is it raining?
+- What's it like out there?
+- Is it hot or cold?
+- Beautiful day, isn't it?
+- What's the weather forecast?
+- Is it quite breezy outside?
+
+## intent:stop
+- ok then you cant help me
+- that was shit, you're not helping
+- you can't help me
+- you can't help me with what i need
+- i guess you can't help me then
+- ok i guess you can't help me
+- that's not what i want
+- ok, but that doesnt help me
+- this is leading to nothing
+- this conversation is not really helpful
+- you cannot help me with what I want
+- I think you cant help me
+- hm i don't think you can do what i want
+- stop
+- stop go back
+- do you get anything?
+- and you call yourself bot company? pff
+- and that's it?
+- nothing else?
+
 
 ## lookup:make  <!-- no list to specify lookup table file -->
 data/make_list.txt

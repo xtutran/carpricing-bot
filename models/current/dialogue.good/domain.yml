@@ -1,0 +1,96 @@
+actions:
+- utter_name
+- utter_thanks
+- utter_greet
+- utter_goodbye
+- utter_ask_car
+- utter_ask_dob
+- utter_ask_license_issue
+- utter_ask_license_expire
+- action_joke
+- action_get_model_year
+- action_ask_model_year
+- action_verify_dob
+- action_verify_expire_date
+- action_pricing
+config:
+  store_entities_as_slots: true
+entities:
+- name
+- make
+- model
+intents:
+- issue_date:
+    use_entities: true
+- name:
+    use_entities: true
+- user_dob:
+    use_entities: true
+- car_model:
+    use_entities: true
+- thanks:
+    use_entities: true
+- greet:
+    use_entities: true
+- pricing:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- expire_date:
+    use_entities: true
+- user_age:
+    use_entities: true
+- year_model:
+    use_entities: true
+slots:
+  license_exp:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  make:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  model:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  model_year:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  name:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  time:
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  user_age:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  user_dob:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_ask_car:
+  - text: Could you specify your car model?
+  - text: May I know which model do you have?
+  - text: I would like to know which model you want to insure?
+  utter_ask_dob:
+  - text: What is your date of birth?
+  - text: Could you tell me your birth date?
+  utter_ask_license_expire:
+  - text: What is expire date of your drive license ?
+  - text: When will your drive license expire?
+  utter_ask_license_issue:
+  - text: What is issue date of your drive license ?
+  - text: When did you get your drive license?
+  utter_ask_model_year:
+  - text: Could you specify year model (2017, 2016, etc ...)?
+  - text: May I know which year model do you have (2017, 2016, etc ...)?
+  utter_goodbye:
+  - text: Talk to you later!
+  utter_greet:
+  - text: Nice to you meet you. How can I help?
+  utter_name:
+  - text: Hey there! Tell me your name.
+  - text: Hello! How could I address you?
+  - text: Hi! May I know who I am talking with?
+  utter_thanks:
+  - text: My pleasure.

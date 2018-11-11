@@ -11,6 +11,7 @@ pipeline:
 # - name: "ner_synonyms"
 # - name: "intent_classifier_sklearn"
 - name: "intent_featurizer_count_vectors"
+#  token_pattern: (?u)\b\w+\b
 - name: "intent_featurizer_ngrams"
   max_number_of_ngrams: 5
 - name: "intent_classifier_tensorflow_embedding"

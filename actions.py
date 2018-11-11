@@ -12,10 +12,12 @@ import pandas as pd
 from duckling import DucklingWrapper
 # from rasa_core.events import SlotSet
 from rasa_core_sdk.events import SlotSet
-
+from rasa_core_sdk.events import AllSlotsReset
+from rasa_core_sdk.events import Restarted
 
 logger = logging.getLogger(__name__)
 d = DucklingWrapper()
+
 
 class ActionJoke(Action):
     def name(self):
@@ -56,17 +58,15 @@ class ActionGetModelYear(Action):
         print(user_message)
         print(dt)
         years = [v['text'] for v in dt if v['value']['grain'] == u'year']
-
+        model_year = None
         if len(years) == 1:
-            # dt = tracker.get_slot('time')
-            # model_year = dt[0][:4] if dt is not None else None
-            return [SlotSet("model_year", years[0])]
-        elif len(years) > 1:
-            dispatcher.utter_message("I saw {} models: {}. What model is correct?".format(len(years), ', '.join(years)))
-            return []
+            # dispatcher.utter_template("utter_ask_dob", tracker, silent_fail=True)
+            model_year = years[0]
         else:
             dispatcher.utter_template("utter_ask_model_year", tracker, silent_fail=True)
-            return []
+
+        return [SlotSet("model_year", model_year)]
+
 
 class ActionVerifyDob(Action):
     def name(self):
@@ -84,14 +84,16 @@ class ActionVerifyDob(Action):
         if dt is not None:
             age = int((pd.datetime.now() - pd.to_datetime(dt[0][:10])).days / 365)
             #if age >= 20:
-            #    dispatcher.utter_template("utter_ask_license_expire", tracker, silent_fail=True)
+                #dispatcher.utter_template("utter_ask_license_expire", tracker, silent_fail=True)
             if age < 20:
-                dispatcher.utter_message("You are under 20 years old and not eligible to drive a car. Could you come back again later?")
+                dispatcher.utter_message("You are under 20 years old and not eligible to drive a car. "
+                                         "Could you come back again later?")
                 # dispatcher.utter_template("utter_ask_dob", tracker, silent_fail=True)
         else:
             dispatcher.utter_message("I cannot recognise your date of birth. Could you enter again?")
             # dispatcher.utter_template("action_verify_dob", tracker, silent_fail=True)
         return [SlotSet("user_age", age), SlotSet("user_dob", dt[0])]
+
 
 class ActionVerifyExpireDate(Action):
     def name(self):
@@ -116,8 +118,8 @@ class ActionVerifyExpireDate(Action):
         else:
             dispatcher.utter_message("I cannot recognise your license expire date. Could you enter again?")
 
-        print(exp_period)
         return [SlotSet("license_exp", exp_period)]
+
 
 class ActionPricing(Action):
     def name(self):
@@ -136,4 +138,4 @@ class ActionPricing(Action):
         print(user_age)
         print(license_exp)
         dispatcher.utter_message('Your car insurance pricing should be: 100$') 
-        return []
+        return [Restarted(), AllSlotsReset()]

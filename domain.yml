@@ -2,8 +2,8 @@ intents:
 - greet
 - goodbye
 - thanks
-# - deny
-# - joke
+- chitchat
+- stop
 - pricing
 - name
 - car_model
@@ -56,6 +56,7 @@ actions:
 - utter_ask_dob
 - utter_ask_license_issue
 - utter_ask_license_expire
+- utter_chitchat
 - action_joke
 - action_get_model_year
 - action_ask_model_year
@@ -73,6 +74,9 @@ templates:
 
   utter_greet:
   - text: "Nice to you meet you. How can I help?"
+
+  utter_chitchat:
+  - text: "I am bot who will assist you some insurances for your car"
 
   utter_ask_car:
   - text: "Could you specify your car model?"
