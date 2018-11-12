@@ -62,8 +62,8 @@ class ActionGetModelYear(Action):
         if len(years) == 1:
             # dispatcher.utter_template("utter_ask_dob", tracker, silent_fail=True)
             model_year = years[0]
-        else:
-            dispatcher.utter_template("utter_ask_model_year", tracker, silent_fail=True)
+        # else:
+        #     dispatcher.utter_template("utter_ask_model_year", tracker, silent_fail=True)
 
         return [SlotSet("model_year", model_year)]
 

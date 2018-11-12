@@ -4,7 +4,7 @@
 * pricing
  - utter_ask_car
 * car_model{"make": "BMW", "model": "i3"}
- - action_get_model_year
+ - utter_ask_model_year
 * year_model
  - action_get_model_year
  - utter_ask_dob
@@ -27,7 +27,7 @@
  - utter_greet
 * pricing
  - utter_ask_car
-* car_model{"make": "BMW", "model": "i3"}
+* car_model{"make": "BMW", "model": "i3", "time": "2017-01-01T00:00:00.000Z"}
  - action_get_model_year
  - utter_ask_license_expire
 * expire_date{"time": "2017-01-01T00:00:00.000Z"}
@@ -36,3 +36,6 @@
  - action_pricing
 * thanks
  - utter_goodbye
+ 
+## fallback
+  - utter_fallback

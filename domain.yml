@@ -27,6 +27,7 @@ entities:
 # - date
 
 
+
 slots:
   name:
     type: text
@@ -59,10 +60,11 @@ actions:
 - utter_chitchat
 - action_joke
 - action_get_model_year
-- action_ask_model_year
+- utter_ask_model_year
 - action_verify_dob
 - action_verify_expire_date
 - action_pricing
+- utter_fallback
 
 
 

@@ -4,7 +4,7 @@
     3, 
     3
   ], 
-  "python": "2.7.13", 
+  "python": "2.7.6", 
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble", 
   "rasa_core": "0.11.1", 
   "policy_names": [
@@ -14,6 +14,9 @@
   ], 
   "action_fingerprints": {
     "utter_goodbye": {
+      "slots": []
+    }, 
+    "utter_fallback": {
       "slots": []
     }, 
     "action_listen": {

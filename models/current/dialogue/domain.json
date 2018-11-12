@@ -38,9 +38,10 @@
     "prev_utter_chitchat", 
     "prev_action_joke", 
     "prev_action_get_model_year", 
-    "prev_action_ask_model_year", 
+    "prev_utter_ask_model_year", 
     "prev_action_verify_dob", 
     "prev_action_verify_expire_date", 
-    "prev_action_pricing"
+    "prev_action_pricing", 
+    "prev_utter_fallback"
   ]
 }
